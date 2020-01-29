@@ -1,9 +1,13 @@
 language: python
 python:
 - '3.5'
+- '3.6'
+- '3.7'
 install:
+- pip install --upgrade setuptools pip setuptools_scm
 - pip install -r requirements.txt
-- pip install .
+- python3 ./setup.py bdist_wheel
+- pip3 install --upgrade ./dist/*.whl
 script: py.test --cov=antlr_ast
 after_success: codecov
 deploy:

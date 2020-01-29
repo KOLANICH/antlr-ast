@@ -1,3 +1,3 @@
-__version__ = "0.8.1"
+from .version import __version__
 
 from . import ast
